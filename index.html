@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+   
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('ogrenciCtrl', function ($scope) {
+
+            $scope.ogrenci = {
+                ad: 'Aysegul',
+                soyad: 'Yılmaz',
+                dersler:[
+                    { isim: 'mat', not: 75 },
+                    { isim: 'fizik', not: 50 },
+                    { isim: 'biyoloji', not: 90 },
+                    { isim: 'ingilizce', not: 95 }
+
+                ],
+
+                isimSoyisim:function () {
+                    var ogrenciNesnesi;
+                    ogrenciNesnesi = $scope.ogrenci;
+                    return ogrenciNesnesi.ad + " " + ogrenciNesnesi.soyad;
+                }
+            }
+
+        });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="ogrenciCtrl">
+    <div ng-include="'isim.html'"></div>
+    <div ng-include="'dersler.html'"></div>
+
+</body>
+</html>
