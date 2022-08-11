@@ -1,0 +1,11 @@
+﻿<div ng-controller="loginCtrl">
+    <form action="/" id="myLogin">
+        Kullanıcı Ad:<input type="text" ng-model="kullaniciad" id="kullaniciad" /><br />
+        Kullanıcı Parola:<input type="password" ng-model="parola" id="parola" /><br />
+        <button type="button" ng-click="submit()">Giriş</button>
+
+    </form>
+</div>
+
+<!--ng-model ile html sayfasından controllera,controllerdan htmle
+    veri bağlama yöntemidir.$scope ile ulaşabiliriz.-->

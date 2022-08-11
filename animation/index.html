@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-animate.min.js"></script>
+   <!-- Animationları kullanmak için css tasarlamamız lazım.Div oluşturup
+    animasyonlarla birlikte saklıyıcaz.
+    <style>
+        div 
+            transition: all linear 0.5s;
+            background-color: lightgreen;
+            height: 100px;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .ng-show {
+            height: 0;
+            width: 0;
+            background-color: transparent;
+            top: -200px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body ng-app="ngAnimate">
+<h1>DIV i sakla:<input type="checkbox" ng-model="myCheck" /></h1>
+<div ng-show="myCheck"></div>
+</body>
+</html>-->
+
+    <style>
+        .css-class-add,.css-class-remove{
+            transiion: all 0.5s cubic-bezier(0.255,0.660,0.450,0.940);
+        }
+        .css-class,
+        .css-class-add.css-class-add-active{
+            color:red;
+            font-size : 3rem;
+        }
+        .css-class,
+        <!--burda removeun aktif olması lazım-->
+        .css-class-remove.css-class-add-active {
+             color: black;
+             font-size : 3rem;
+        }
+
+    </style>
+    <!--bir aplication tanımlamak istiyorsak [] içinde app değerimizi giriyoruz.-->
+<script>
+    var app = angular.module('myApp',['ngAnimate'])
+</script>
+</head>
+<body ng-app="ngAnimate">
+<p>
+    <button ng-click="myCssvar='css-class'">Ayarla</button>
+    <button ng-click="myCssvar=' '">Temizle</button>
+    <br />
+    <span ng-class="myCssvar">Css için Animasyon</span>
+</p>
+
+</body>
+</html>
